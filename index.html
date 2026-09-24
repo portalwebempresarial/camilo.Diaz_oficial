@@ -2,30 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport optimizado para evitar zoom no deseado en inputs de móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Camilo Díaz | Contrataciones y Reservas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
-        /* Efecto de resplandor para los videos */
-        .video-glow {
-            box-shadow: 0 10px 40px -10px rgba(234, 179, 8, 0.3);
-        }
-        /* Ajustes específicos para iframes en móvil */
+        .video-glow { box-shadow: 0 10px 40px -10px rgba(234, 179, 8, 0.3); }
         .ig-container iframe { max-width: 100% !important; border-radius: 1rem; }
     </style>
 </head>
 <body class="bg-black text-gray-100 font-sans antialiased overflow-x-hidden">
 
-    <!-- SECCIÓN DE PORTADA (HERO) CON VIDEOS -->
+    <!-- SECCIÓN DE PORTADA -->
     <header class="relative min-h-screen flex flex-col justify-center items-center pt-16 pb-12 overflow-hidden bg-black">
         
-        <!-- Efectos de iluminación de fondo (Glow) para mejor contraste -->
         <div class="absolute top-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-yellow-600/20 rounded-full blur-[100px] md:blur-[150px] pointer-events-none"></div>
         <div class="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/20 rounded-full blur-[100px] md:blur-[150px] pointer-events-none"></div>
 
-        <!-- Textos de Portada -->
         <div class="z-10 text-center px-4 max-w-4xl mx-auto mb-10 mt-8 lg:mt-0">
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 uppercase tracking-widest drop-shadow-lg">Camilo Díaz</h1>
             <p class="text-lg md:text-2xl text-gray-300 font-light mb-8 drop-shadow-md">La mejor música en vivo para que tu evento sea inolvidable.</p>
@@ -34,37 +27,21 @@
             </a>
         </div>
 
-        <!-- Contenedor de Videos (YouTube + Instagram) -->
         <div class="z-10 w-full max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-8">
-            
-            <!-- VIDEO PRINCIPAL (YouTube) -->
             <div class="w-full lg:w-2/3 aspect-video bg-gray-900 rounded-2xl overflow-hidden video-glow border border-gray-800 relative z-20">
                 <iframe src="https://www.youtube.com/embed/zx8g32a_Gd8?autoplay=1&mute=1&loop=1&playlist=zx8g32a_Gd8&controls=1&rel=0" 
-                        title="Camilo Díaz Video Principal"
-                        class="absolute top-0 left-0 w-full h-full"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
+                        title="Camilo Díaz Video Principal" class="absolute top-0 left-0 w-full h-full" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
             
-            <!-- VIDEO SECUNDARIO (Instagram) -->
             <div class="ig-container w-full max-w-[340px] mx-auto lg:mx-0 lg:w-1/3 bg-white rounded-2xl overflow-hidden video-glow border border-gray-800 flex justify-center z-20">
-                <iframe src="https://www.instagram.com/reel/DDIcHGpRu7M/embed" 
-                        width="100%" 
-                        height="540" 
-                        frameborder="0" 
-                        scrolling="no" 
-                        allowtransparency="true"
-                        allow="autoplay; encrypted-media"
-                        class="w-full">
-                </iframe>
+                <iframe src="https://www.instagram.com/reel/DDIcHGpRu7M/embed" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media" class="w-full"></iframe>
             </div>
-            
         </div>
     </header>
 
-    <!-- SECCIÓN DE FORMULARIO DE RESERVAS -->
+    <!-- FORMULARIO DE RESERVAS -->
     <section id="reservas" class="py-20 bg-gray-950 relative border-t border-gray-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-10">
@@ -75,28 +52,24 @@
             <div class="bg-gray-900 p-6 md:p-10 rounded-3xl shadow-2xl border border-gray-800">
                 <form id="reservaForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Nombre -->
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
-                            <input type="text" id="nombre" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors" placeholder="Ej. Juan Pérez">
+                            <input type="text" id="nombre" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="Ej. Juan Pérez">
                         </div>
-                        <!-- Teléfono -->
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Teléfono / WhatsApp</label>
-                            <input type="tel" id="telefono" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors" placeholder="Ej. 3001234567">
+                            <input type="tel" id="telefono" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="Ej. 3001234567">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Fecha del Evento -->
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Fecha del Evento</label>
-                            <input type="date" id="fecha" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors" style="color-scheme: dark;">
+                            <input type="date" id="fecha" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" style="color-scheme: dark;">
                         </div>
-                        <!-- Tipo de Evento -->
                         <div>
                             <label class="block text-sm font-medium text-gray-400 mb-2">Tipo de Evento</label>
-                            <select id="tipoEvento" class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors">
+                            <select id="tipoEvento" class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500">
                                 <option value="Cumpleaños">Cumpleaños</option>
                                 <option value="Boda">Boda</option>
                                 <option value="Evento Corporativo">Evento Corporativo</option>
@@ -106,13 +79,11 @@
                         </div>
                     </div>
 
-                    <!-- Mensaje / Detalles -->
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-2">Detalles del Evento (Ciudad, Lugar, Horas)</label>
-                        <textarea id="detalles" rows="4" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors" placeholder="Escribe aquí los detalles de tu evento..."></textarea>
+                        <textarea id="detalles" rows="4" required class="w-full bg-gray-950 text-white border border-gray-700 rounded-xl px-4 py-3.5 text-base focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500" placeholder="Escribe aquí los detalles de tu evento..."></textarea>
                     </div>
 
-                    <!-- Botón de Envío -->
                     <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-4 px-8 rounded-xl text-lg transition duration-300 flex justify-center items-center gap-3 shadow-lg transform hover:-translate-y-1 mt-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
@@ -124,7 +95,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE COMENTARIOS CON LOGINS SOCIALES -->
+    <!-- SECCIÓN DE COMENTARIOS CON DISQUS -->
     <section class="py-16 bg-black border-t border-gray-900">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-10">
@@ -133,7 +104,6 @@
             </div>
             
             <div class="bg-gray-900 p-4 md:p-8 rounded-2xl border border-gray-800">
-                <!-- Contenedor donde Disqus inyectará los comentarios -->
                 <div id="disqus_thread"></div>
             </div>
         </div>
@@ -154,13 +124,11 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE ENVÍO A WHATSAPP -->
+    <!-- SCRIPT DE WHATSAPP -->
     <script>
         document.getElementById('reservaForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const numeroWhatsApp = "573229140184"; 
-            
             const nombre = document.getElementById('nombre').value;
             const telefono = document.getElementById('telefono').value;
             const fecha = document.getElementById('fecha').value;
@@ -173,28 +141,20 @@
                             `*Fecha del Evento:* ${fecha}%0A` +
                             `*Tipo de Evento:* ${tipoEvento}%0A` +
                             `*Detalles:* ${detalles}`;
-
-            const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
-            window.open(url, '_blank');
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
         });
     </script>
 
-    <!-- SCRIPT DE COMENTARIOS DISQUS (LOGINS SOCIALES) -->
+    <!-- SCRIPT DE DISQUS CONFIGURADO -->
     <script>
-        /**
-        *  COMO ACTIVAR ESTO PARA PRODUCCIÓN:
-        *  1. Crea una cuenta gratis en https://disqus.com/profile/signup/
-        *  2. Registra tu sitio web.
-        *  3. Cambia 'TU_SHORTNAME_AQUI' por el "shortname" que te dé Disqus.
-        */
         var disqus_config = function () {
-            this.page.url = window.location.href;  // Coge la URL actual automáticamente
-            this.page.identifier = 'camilodiaz-landing'; // Identificador único de esta página
+            this.page.url = window.location.href;  
+            this.page.identifier = 'camilodiaz-landing'; 
         };
         (function() {
             var d = document, s = d.createElement('script');
-            // Reemplaza "TU_SHORTNAME_AQUI" con el shortname de tu cuenta Disqus
-            s.src = 'https://TU_SHORTNAME_AQUI.disqus.com/embed.js';
+            // Aquí está insertado tu shortname real: camilodiaz-reservas
+            s.src = 'https://camilodiaz-reservas.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
